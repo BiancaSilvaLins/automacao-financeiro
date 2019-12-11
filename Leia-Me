@@ -1,0 +1,32 @@
+
+Para gerar um client e enviar chamadas ao serviço é necessário excutar o comando abaixo utilizando o wsimport 
+o mesmo se encontra dentro da instalacao do jdk dentro da pasta bin
+
+Execute o comando dentro do pacote que deseja importar os arquivos do servico
+Este comando irá gerar todas as classes necessárias para interagir como serviço dentro da hierarquia de pacotes.
+
+Comando : 
+	wsimport -keep -verbose  http://servico.financeiro.hom.capes.gov.br/financeiro-servico/ServicosSLR?wsdl
+	
+
+
+
+O Pedro manja um pouco, qualquer coisa vc pode falar com o Ogino.
+Receber SRL funciona assim, são 3 webservice (gerar, popular e confirmar)
+Aí eles aparecem no sistema.
+Depois, dependendo do tipo de slr tem um fluxo específico.
+Eu estava fazendo um tipo de slr (BPI) mas a demanda é pra todos os tipos.
+No caso da BPI ela é bolsa nacional
+
+
+Aí tem que receber, analisar financeiramente e depois realizar análise contábil
+
+
+3 Metodos envolvidos no cenario : Gerar , PopularBPI e ConfirmarSLR
+
+
+
+BPI é um tipoSLR
+    - BOLSA NACIONAL
+    - GERANDO, POPULANDO e CONFIRMANDO ...
+    - O RECEBIMENTO TEM Q TER PERMISSOES ESPECIFICAS PARA PODER TER ACESSO AO MENU -> AO QUE PARECE E NO PROPRIO SISTEMA WEB SICAPES
